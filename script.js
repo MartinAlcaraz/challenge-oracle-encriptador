@@ -1,4 +1,17 @@
 
+const botonEncriptar= document.querySelector("#btn-encriptar");
+const botonDesencriptar= document.querySelector("#btn-desencriptar");
+
+botonDesencriptar.addEventListener("click", (event) => {
+   event.preventDefault();
+});
+
+botonEncriptar.addEventListener("click", (event) => {
+   event.preventDefault();
+   
+   
+});
+
 /* Reglas de encriptación: 
 "e" es convertido para "enter" 
 "i" es convertido para "imes"

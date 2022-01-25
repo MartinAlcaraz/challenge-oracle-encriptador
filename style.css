@@ -22,6 +22,7 @@ body {
 .titulo {
   text-decoration: underline;
   color: whitesmoke;
+  text-shadow: 3px 3px #3a2c2cf6 ;
   padding: 15px;
   width: 100%;
   margin: 20px auto;
@@ -42,6 +43,7 @@ body {
   opacity: 1;
   display: flex;
   align-items: center;  
+  
 }
 
 .btn {
@@ -55,15 +57,28 @@ body {
   margin: 10px auto 0 auto;
   border-radius: 0.5em;
   opacity: 1;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.btn:active{
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 0;
 }
 
 .text-input {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
   border-radius: 0.5em;
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: block;
   padding: 0.5em;
   width: 100%;
   height: 50px;
-  
+  margin-top: 5px;
 }
 
+label{
+  color: #fff;
+  text-shadow: 2px 2px #5e2323f6 ;
+
+}
