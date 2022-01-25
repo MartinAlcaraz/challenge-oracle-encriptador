@@ -2,13 +2,104 @@
 const botonEncriptar= document.querySelector("#btn-encriptar");
 const botonDesencriptar= document.querySelector("#btn-desencriptar");
 
+const textoEntrada= document.getElementById("input-texto");
+const textoSalida= document.getElementById("msg");
+
+      // murcielago
+
+
+function encriptar(){
+   
+   let texto= textoEntrada.value; 
+   let aux="";
+   
+   texto= texto.toLowerCase();
+   
+   for(let i=0; i < texto.length; i++){
+      let st="";
+      let car= texto[i];
+      switch ( car ){
+         case "a": 
+                  st="ai";            
+                  break;
+         case "e":
+                  st="enter";      
+                  break;
+         case "i":
+                  st="imes";      
+                  break;
+         case "o":
+                  st="ober";      
+                  break;  
+         case "u":
+                  st="ufat";      
+                  break;             
+         default:
+                  st= car;
+                  break;
+      }
+
+      aux+= st;
+   }
+   
+   textoSalida.value= aux;
+
+}
+
+function desencriptar(){
+   
+   let texto= textoEntrada.value; 
+   let aux="";
+   
+   texto= texto.toLowerCase();
+   
+   let i=0;
+   while ( i < texto.length){
+      let st="";
+      let car= texto[i];
+      switch ( car ){
+         case "a":             //st="ai";            
+                  st= "a";
+                  i+= 2;
+                  break;
+         case "e":            //st="enter";  
+                  st= "e";
+                  i+= 5;    
+                  break;
+         case "i":            //st="imes";      
+                  st="i";
+                  i+= 4;
+                  break;
+         case "o":            //st="ober";      
+                  st= "o";
+                  i+= 4;
+                  break;  
+         case "u":            //st="ufat";      
+                  st= "u";
+                  i+= 4;
+                  break;             
+         default:
+                  st= car;          
+                  i += 1;        
+                  break;
+      }
+      aux+= st;   
+   }   
+   
+   textoSalida.value= aux;
+
+}
+
+
 botonDesencriptar.addEventListener("click", (event) => {
    event.preventDefault();
+   desencriptar();
+   
 });
 
 botonEncriptar.addEventListener("click", (event) => {
    event.preventDefault();
-   
+   encriptar();
    
 });
 
