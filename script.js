@@ -1,6 +1,8 @@
 
 const botonEncriptar= document.querySelector("#btn-encriptar");
 const botonDesencriptar= document.querySelector("#btn-desencriptar");
+const botonCopy = document.querySelector("#btn-copy");
+
 
 const textoEntrada= document.getElementById("input-texto");
 const textoSalida= document.getElementById("msg");
