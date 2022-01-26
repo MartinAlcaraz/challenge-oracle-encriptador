@@ -1,11 +1,45 @@
 
 const botonEncriptar= document.querySelector("#btn-encriptar");
 const botonDesencriptar= document.querySelector("#btn-desencriptar");
+const botonCopy = document.querySelector("#btn-copy");
+
 
 const textoEntrada= document.getElementById("input-texto");
 const textoSalida= document.getElementById("msg");
 
       // murcielago
+
+/*
+textoEntrada.addEventListener("copy", (e) => {
+   textoSalida.value= "copiado";
+});
+*/
+
+async function copiarEnElPortapapeles(){
+   
+   //navigator.clipboard.readText().then(texto => {
+   //       textoEntrada.value = texto;
+   //}
+
+   await navigator.clipboard.writeText(textoSalida.value)
+   
+   .catch(error => {
+      // Por si el usuario no da permiso u ocurre un error
+      console.log("Hubo un error: ", error);
+   });
+
+} 
+
+botonCopy.addEventListener("click", () => {
+   if(navigator.clipboard){
+      //Perfecto, podemos usarlo
+      copiarEnElPortapapeles();
+      
+    }else{
+      //No soporta la API, tenemos que usar viejos métodos
+    }
+
+});
 
 
 function encriptar(){
