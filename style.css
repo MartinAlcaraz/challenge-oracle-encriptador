@@ -4,12 +4,18 @@
   box-sizing: border-box;
 }
 
+html{
+  min-height: 100%;
+}
+
 body {
   background-color: rgb(114, 207, 193);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-image: url("img/encriptado.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  min-height: 100%;
+  margin: 0;
 }
 
 .main {
@@ -20,9 +26,10 @@ body {
 }
 
 .titulo {
+  
   text-decoration: underline;
   color: whitesmoke;
-  text-shadow: 3px 3px #3a2c2cf6 ;
+  text-shadow: 3px 3px black ;
   padding: 15px;
   width: 100%;
   margin: 20px auto;
@@ -79,6 +86,39 @@ body {
 
 label{
   color: #fff;
-  text-shadow: 2px 2px #5e2323f6 ;
+  text-shadow: 2px 2px black ;
+
+}
+
+.principal{
+  min-height: 85vh;
+  
+}
+
+footer{
+  height: 9vh;
+  padding: 2vh;
+  
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
+  background-color: rgba(217, 191, 191, 0.5);
+  border-radius: 0.5em;
+  width: 80vw;
+  margin: 0 auto 2vh auto;
+  
+}
+footer span{ 
+  
+  color: whitesmoke;
+  font-size: small;
+  text-shadow: 1px 1px black ;
+  
+  
+}
+
+footer img{ 
+  float: right;
+  margin-top: -1vh;
+  margin-right: 50px;
+  height: 7vh;
 
 }
