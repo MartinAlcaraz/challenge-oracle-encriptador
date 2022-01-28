@@ -47,7 +47,6 @@ function encriptar(){
    let texto= textoEntrada.value; 
    let aux="";
    
-   texto= texto.toLowerCase();
    
    for(let i=0; i < texto.length; i++){
       let st="";
@@ -85,7 +84,6 @@ function desencriptar(){
    let texto= textoEntrada.value; 
    let aux="";
    
-   texto= texto.toLowerCase();
    
    let i=0;
    while ( i < texto.length){
@@ -125,6 +123,41 @@ function desencriptar(){
 }
 
 
+function esMayuscula(caracter){
+   
+   return /[A-Z]/.test(caracter);  // comprueba si el caracter esta en mayuscula
+}
+
+function esNumero(caracter){
+   
+   return /[0-9]/.test(caracter);  // comprueba si el caracter es un numero
+}
+
+function tieneAcento(caracter){
+   
+   return /[á,é,í,ó,ú,Á,É,Í,Ó,Ú]/.test(caracter);  // comprueba si el caracter tiene acento
+
+}
+
+function textoValido(){
+
+   let texto= textoEntrada.value;
+
+   let valido= true;
+   
+   for (let i=0; i< texto.length; i++){
+      car= texto.charAt(i);
+                           
+      if( esMayuscula(car) || esNumero(car) || tieneAcento(car) ){
+         valido= false;
+         break;
+      }
+   }
+
+   return valido;
+
+}
+
 botonDesencriptar.addEventListener("click", (event) => {
    event.preventDefault();
    desencriptar();
@@ -133,7 +166,12 @@ botonDesencriptar.addEventListener("click", (event) => {
 
 botonEncriptar.addEventListener("click", (event) => {
    event.preventDefault();
-   encriptar();
+   if (textoValido()){
+      encriptar();   
+   }else{
+      textoEntrada.value= "Texto no valido";
+   }
+   
    
 });
 
